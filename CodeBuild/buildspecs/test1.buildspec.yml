@@ -1,0 +1,13 @@
+version: 0.2
+
+env:
+  variables:
+    TEST_ENV_IN_YAML: "value_in_yaml"
+  parameter-store:
+    TEST_ENV_IN_SSM: /test/codebuild/param1
+
+phases:
+  build:
+    commands:
+      - echo "TEST_ENV_IN_YAML= ${TEST_ENV_IN_YAML}"
+      - echo "TEST_ENV_IN_SSM= ${TEST_ENV_IN_SSM}"
